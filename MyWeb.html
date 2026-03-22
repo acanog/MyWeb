@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pablo Cano | Backend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header / Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0f2b3d, #2c7da0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2c7da0;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .highlight {
+            color: #2c7da0;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #2c7da0;
+            color: white;
+            box-shadow: 0 4px 10px rgba(44,125,160,0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1f5e7a;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid #2c7da0;
+            color: #2c7da0;
+        }
+
+        .btn-outline:hover {
+            background: #2c7da0;
+            color: white;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image i {
+            font-size: 12rem;
+            color: #2c7da0;
+            opacity: 0.8;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            border-color: #2c7da0;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c7da0;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: #475569;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech span {
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e40af;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2c7da0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Experience & Education */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-icon {
+            width: 48px;
+            height: 48px;
+            background: #eef2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c7da0;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .timeline-company {
+            color: #2c7da0;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 1.2rem 1.8rem;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 500;
+            transition: 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-card i {
+            font-size: 1.3rem;
+            color: #2c7da0;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: #2c7da0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Pablo Cano</div>
+        <div class="nav-links">
+            <a href="#skills">Skills</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#experience">Experiencia</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Hola, soy <span class="highlight">Pablo Cano</span><br>Backend Developer</h1>
+                <p>Especialista en .NET, ASP.NET Core, SQL Server y Azure. Construyo APIs escalables y modernizo aplicaciones legacy.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                    <a href="https://github.com/tu-usuario" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-code"></i>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills" class="section">
+            <div class="section-title">Stack Técnico</div>
+            <div class="skills-grid">
+                <span class="skill-card">C# / .NET</span>
+                <span class="skill-card">ASP.NET MVC</span>
+                <span class="skill-card">ASP.NET Core</span>
+                <span class="skill-card">Entity Framework</span>
+                <span class="skill-card">SQL Server</span>
+                <span class="skill-card">MySQL</span>
+                <span class="skill-card">MongoDB</span>
+                <span class="skill-card">Azure / DigitalOcean</span>
+                <span class="skill-card">IIS</span>
+                <span class="skill-card">Git</span>
+                <span class="skill-card">Blazor</span>
+                <span class="skill-card">Python</span>
+                <span class="skill-card">REST APIs</span>
+            </div>
+        </div>
+
+        <!-- Proyectos destacados -->
+        <div id="projects" class="section">
+            <div class="section-title">Proyectos Destacados</div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-cogs"></i></div>
+                    <div class="project-title">SistemaGestionAPI</div>
+                    <div class="project-desc">API RESTful para gestión administrativa, desarrollada con .NET Core, Entity Framework y autenticación JWT. Incluye documentación Swagger y pruebas unitarias.</div>
+                    <div class="project-tech"><span>C#</span><span>.NET Core</span><span>SQL Server</span></div>
+                    <a href="https://github.com/tu-usuario/SistemaGestionAPI" target="_blank" class="project-link">Ver en GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="project-title">CV-Pablo-Cano</div>
+                    <div class="project-desc">Hoja de vida interactiva en HTML/CSS, desplegada en Render. Muestra experiencia, habilidades y certificaciones.</div>
+                    <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>Font Awesome</span></div>
+                    <a href="https://pablo-cano-cv.onrender.com/" target="_blank" class="project-link">Ver CV <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="project-title">Propio (Data Tools)</div>
+                    <div class="project-desc">Herramientas en Python para automatización de reportes y análisis de datos, optimizando procesos manuales en entornos empresariales.</div>
+                    <div class="project-tech"><span>Python</span><span>Pandas</span><span>Excel</span></div>
+                    <a href="https://github.com/tu-usuario/propio" target="_blank" class="project-link">Ver en GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experiencia y Educación -->
+        <div id="experience" class="section">
+            <div class="section-title">Trayectoria</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Back-end Developer</div>
+                        <div class="timeline-company">SINAPSIS · Remoto</div>
+                        <div class="timeline-date">may 2022 – actualidad</div>
+                        <p>Desarrollo de APIs con .NET Core, optimización de consultas SQL Server, migración de MVC a .NET Core, despliegues en Azure/DigitalOcean.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Software Contractor</div>
+                        <div class="timeline-company">Banco Interamericano de Desarrollo · Remoto</div>
+                        <div class="timeline-date">may 2022 – actualidad</div>
+                        <p>Administración de BD con 2M+ registros, APIs seguras con JWT, modernización de aplicaciones, automatización con PowerShell y Excel.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Tecnólogo en Análisis y Desarrollo de Software</div>
+                        <div class="timeline-company">SENA</div>
+                        <div class="timeline-date">may 2024 – actualidad</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Técnico en Desarrollo de Software</div>
+                        <div class="timeline-company">SENA</div>
+                        <div class="timeline-date">2018 – 2019</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+        <div id="contact" class="section">
+            <div class="section-title">Conectemos</div>
+            <div class="contact-links">
+                <a href="mailto:acanog90@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i> acanog90@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/pablo-andres-cano-0b11ba161/" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/acanog" target="_blank" class="contact-card">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://wa.me/573192228903" target="_blank" class="contact-card">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 Pablo Andrés Cano — Backend Developer
+        </footer>
+    </div>
+</body>
+</html>
