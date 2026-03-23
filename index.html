@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* (mismo CSS que ya tenías, no cambia) */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +28,6 @@
             padding: 0 2rem;
         }
 
-        /* Header / Nav */
         nav {
             display: flex;
             justify-content: space-between;
@@ -62,7 +62,6 @@
             color: #2c7da0;
         }
 
-        /* Hero */
         .hero {
             padding: 5rem 0 4rem;
             display: flex;
@@ -140,7 +139,6 @@
             opacity: 0.8;
         }
 
-        /* Section styles */
         .section {
             padding: 5rem 0;
             border-bottom: 1px solid #e2e8f0;
@@ -153,7 +151,6 @@
             text-align: center;
         }
 
-        /* Skills */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -176,7 +173,6 @@
             border-color: #2c7da0;
         }
 
-        /* Projects */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -241,7 +237,6 @@
             font-size: 0.9rem;
         }
 
-        /* Experience & Education */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -287,7 +282,31 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Contact */
+        .certifications-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cert-badge {
+            background: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .cert-badge:hover {
+            border-color: #2c7da0;
+            transform: translateY(-2px);
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
@@ -351,6 +370,7 @@
             <a href="#skills">Skills</a>
             <a href="#projects">Proyectos</a>
             <a href="#experience">Experiencia</a>
+            <a href="#certifications">Certificaciones</a>
             <a href="#contact">Contacto</a>
         </div>
     </nav>
@@ -360,7 +380,7 @@
         <div class="hero">
             <div class="hero-content">
                 <h1>Hola, soy <span class="highlight">Pablo Cano</span><br>Backend Developer</h1>
-                <p>Especialista en .NET, ASP.NET Core, SQL Server y Azure. Construyo APIs escalables y modernizo aplicaciones legacy.</p>
+                <p>Especialista en .NET, ASP.NET Core, SQL Server y Azure. Construcción de APIs escalables y modernización de aplicaciones legacy.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">Ver proyectos</a>
                     <a href="https://github.com/acanog" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
@@ -379,8 +399,10 @@
                 <span class="skill-card">ASP.NET MVC</span>
                 <span class="skill-card">ASP.NET Core</span>
                 <span class="skill-card">Entity Framework</span>
+                <span class="skill-card">Dapper</span>
                 <span class="skill-card">SQL Server</span>
                 <span class="skill-card">MySQL</span>
+                <span class="skill-card">Oracle</span>
                 <span class="skill-card">MongoDB</span>
                 <span class="skill-card">Azure / DigitalOcean</span>
                 <span class="skill-card">IIS</span>
@@ -396,17 +418,18 @@
             <div class="section-title">Proyectos Destacados</div>
             <div class="projects-grid">
                 <div class="project-card">
-					<div class="project-icon"><i class="fas fa-terminal"></i></div>
-					<div class="project-title">Console App: Adjetivos & Compañeros</div>
-					<div class="project-desc">
-						Aplicación de consola en Python que asigna adjetivos aleatorios a compañeros y acumula puntajes. 
-						Incluye sistema de autenticación de usuarios, gestión de compañeros y ranking en tiempo real.
-						Ideal para practicar estructuras de datos, manejo de archivos y lógica de juegos.
-					</div>
-					<div class="project-tech"><span>Python</span><span>Archivos JSON</span><span>Lógica de juego</span>
-					</div>	
+                    <div class="project-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="project-title">Console App: Adjetivos & Compañeros</div>
+                    <div class="project-desc">
+                        Aplicación de consola en Python que asigna adjetivos aleatorios a compañeros y acumula puntajes. 
+                        Incluye sistema de autenticación de usuarios, gestión de compañeros y ranking en tiempo real.
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>Archivos JSON</span><span>Lógica de juego</span>
+                    </div>
                     <a href="https://github.com/acanog/JuegoAdjetivosIngPY" target="_blank" class="project-link">Ver en GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
+
                 <div class="project-card">
                     <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
                     <div class="project-title">CV-Pablo-Cano</div>
@@ -414,12 +437,14 @@
                     <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>Font Awesome</span></div>
                     <a href="https://pablo-cano-cv.onrender.com/" target="_blank" class="project-link">Ver CV <i class="fas fa-external-link-alt"></i></a>
                 </div>
+
+                <!-- Espacio reservado para proyecto .NET (próximamente) -->
                 <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                    <div class="project-title">Propio (Data Tools)</div>
-                    <div class="project-desc">Herramientas en Python para automatización de reportes y análisis de datos, optimizando procesos manuales en entornos empresariales.</div>
-                    <div class="project-tech"><span>Python</span><span>Pandas</span><span>Excel</span></div>
-                    <a href="https://github.com/tu-usuario/propio" target="_blank" class="project-link">Ver en GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <div class="project-icon"><i class="fas fa-cogs"></i></div>
+                    <div class="project-title">[Próximamente] API RESTful .NET</div>
+                    <div class="project-desc">Proyecto académico/autodidacta para demostrar habilidades en .NET Core, Entity Framework, JWT y buenas prácticas. En desarrollo.</div>
+                    <div class="project-tech"><span>C#</span><span>.NET Core</span><span>Entity Framework</span><span>SQL Server</span></div>
+                    <span class="project-link" style="color:#94a3b8;">Próximamente</span>
                 </div>
             </div>
         </div>
@@ -432,9 +457,9 @@
                     <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="timeline-content">
                         <div class="timeline-title">Back-end Developer</div>
-                        <div class="timeline-company">SINAPSIS · Remoto</div>
+                        <div class="timeline-company">SINAPSIS (BID) · Remoto</div>
                         <div class="timeline-date">may 2022 – actualidad</div>
-                        <p>Desarrollo de APIs con .NET Core, optimización de consultas SQL Server, migración de MVC a .NET Core, despliegues en Azure/DigitalOcean.</p>
+                        <p>APIs en .NET Core con Dapper y Entity Framework, optimización de SQL Server, migración de MVC a .NET Core, despliegues con Azure DevOps y PowerShell.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -443,7 +468,16 @@
                         <div class="timeline-title">Software Contractor</div>
                         <div class="timeline-company">Banco Interamericano de Desarrollo · Remoto</div>
                         <div class="timeline-date">may 2022 – actualidad</div>
-                        <p>Administración de BD con 2M+ registros, APIs seguras con JWT, modernización de aplicaciones, automatización con PowerShell y Excel.</p>
+                        <p>Administración de BD con grandes volúmenes de registros, APIs seguras con JWT, modernización de aplicaciones a .NET 6, automatización con PowerShell y Excel.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Analista Servicios GTI nivel 1</div>
+                        <div class="timeline-company">ARUS Tecnología · Híbrido</div>
+                        <div class="timeline-date">oct 2020 – may 2022</div>
+                        <p>Gestión SQL y MongoDB, automatización con Python, soporte técnico y análisis de fallas en AWS.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -462,6 +496,25 @@
                         <div class="timeline-date">2018 – 2019</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Certificaciones (nueva sección) -->
+        <div id="certifications" class="section">
+            <div class="section-title">Certificaciones</div>
+            <div class="certifications-grid">
+                <div class="cert-badge">Curso de IA: ChatGPT, DALL-E, Hugging Face - Platzi</div>
+                <div class="cert-badge">Fundamentos de Entity Framework - Platzi</div>
+                <div class="cert-badge">C#: Manejo de Datos con LINQ - Platzi</div>
+                <div class="cert-badge">SC-900 · AZ-900 - Intelligent Training</div>
+                <div class="cert-badge">HTML y CSS - Udemy</div>
+                <div class="cert-badge">Introducción a C# - Platzi</div>
+                <div class="cert-badge">C# - Coderhouse</div>
+                <div class="cert-badge">Python 3 Plus - UDEMI</div>
+                <div class="cert-badge">Creación de página web - UDEMI</div>
+                <div class="cert-badge">Seminario de D.O.S - CENSA</div>
+                <div class="cert-badge">Sistemas operativos Linux - SENA</div>
+                <div class="cert-badge">Herramientas de internet y correo - SENA</div>
             </div>
         </div>
 
